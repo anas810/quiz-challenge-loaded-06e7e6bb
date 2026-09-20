@@ -125,12 +125,12 @@ export const QUESTION_POOL: QuizQuestion[] = [
     difficulty: "medium",
   },
   {
-    question: "What is the Sanctum?",
+    question: "What is The Throne?",
     options: [
-      "A bonus loot room on floor 1",
-      "The last preparation stop before the boss arena",
-      "A respawn point",
-      "The weekly leaderboard screen",
+      "The final boss arena on floor 10",
+      "A weekly jackpot that grows until a winner takes it",
+      "A leaderboard title for the top player",
+      "A premium battle pass",
     ],
     correctIndex: 1,
     difficulty: "medium",

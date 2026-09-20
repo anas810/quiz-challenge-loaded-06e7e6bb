@@ -2,7 +2,9 @@ import { useMemo, useState } from "react";
 import { createFileRoute } from "@tanstack/react-router";
 import { QUESTION_POOL, getRank, type QuizQuestion } from "@/lib/quiz-data";
 import { cardPath, tweetUrl, X_HANDLE } from "@/lib/share";
-import logoUrl from "@/assets/maze-of-gains-logo.png";
+import logoAsset from "@/assets/maze-of-gains-logo.png.asset.json";
+
+const logoUrl = logoAsset.url;
 
 export const Route = createFileRoute("/")({
   head: () => ({
