@@ -24,9 +24,11 @@ export function sharePageUrl(score: number): string {
   return `${SITE_URL}/s/${clampScore(score)}`;
 }
 
+export const QUIZ_URL = "https://mog-quiz.vercel.app/";
+
 export function tweetUrl(score: number, rankTitle: string): string {
   const text = `I scored ${clampScore(score)}/${TOTAL_QUESTIONS} on the ${X_HANDLE} Maze of Gains quiz — rank: ${rankTitle}.\n\nThink you know the maze better?`;
   return `https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}&url=${encodeURIComponent(
-    sharePageUrl(score),
+    QUIZ_URL,
   )}`;
 }
