@@ -3,8 +3,10 @@ import { createFileRoute } from "@tanstack/react-router";
 import { QUESTION_POOL, getRank, type QuizQuestion } from "@/lib/quiz-data";
 import { cardPath, tweetUrl, X_HANDLE } from "@/lib/share";
 import logoAsset from "@/assets/maze-of-gains-logo.png.asset.json";
+import bannerAsset from "@/assets/featured-game-banner.gif.asset.json";
 
 const logoUrl = logoAsset.url;
+const bannerUrl = bannerAsset.url;
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -87,7 +89,19 @@ function Index() {
   const isLast = current + 1 >= TOTAL_QUESTIONS;
 
   return (
-    <div className="flex min-h-screen w-full flex-col bg-background font-body text-foreground antialiased selection:bg-volt selection:text-dungeon">
+    <div
+      className="flex min-h-screen w-full flex-col bg-background font-body text-foreground antialiased selection:bg-volt selection:text-dungeon"
+      style={
+        phase === "start"
+          ? {
+              backgroundImage: `url(${bannerUrl})`,
+              backgroundSize: "cover",
+              backgroundPosition: "center",
+              backgroundRepeat: "no-repeat",
+            }
+          : undefined
+      }
+    >
       <header className="flex items-center justify-between border-b-2 border-black px-5 py-5 sm:px-10">
         <img
           src={logoUrl}
