@@ -29,8 +29,7 @@ export function sharePageUrl(score: number): string {
 
 export function tweetUrl(score: number, rankTitle: string): string {
   const text = `I scored ${clampScore(score)}/${TOTAL_QUESTIONS} on the ${X_HANDLE} Maze of Gains quiz — rank: ${rankTitle}.\n\nThink you know the maze better?`;
-  // The score page carries the card as its og:image, so X auto-attaches it.
   return `https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}&url=${encodeURIComponent(
-    sharePageUrl(score),
+    QUIZ_URL,
   )}`;
 }
