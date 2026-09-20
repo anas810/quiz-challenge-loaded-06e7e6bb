@@ -5,6 +5,9 @@ export const X_HANDLE = "@onchainheroes";
 
 export const TOTAL_QUESTIONS = 15;
 
+/** Bump when social-card metadata changes so X performs a fresh crawl. */
+const SOCIAL_CARD_VERSION = "2";
+
 export function clampScore(value: unknown): number {
   const n = Number(value);
   if (!Number.isFinite(n)) return 0;
@@ -21,7 +24,7 @@ export function cardUrl(score: number): string {
 }
 
 export function sharePageUrl(score: number): string {
-  return `${SITE_URL}/s/${clampScore(score)}`;
+  return `${SITE_URL}/s/${clampScore(score)}?card=${SOCIAL_CARD_VERSION}`;
 }
 
 export function tweetUrl(score: number, rankTitle: string): string {

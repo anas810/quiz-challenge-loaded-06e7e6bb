@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { getRank } from "@/lib/quiz-data";
-import { cardPath, cardUrl, clampScore, TOTAL_QUESTIONS } from "@/lib/share";
+import { cardPath, cardUrl, clampScore, sharePageUrl, TOTAL_QUESTIONS } from "@/lib/share";
 import { BrandWordmark } from "@/components/brand-wordmark";
 
 export const Route = createFileRoute("/s/$score")({
@@ -9,6 +9,7 @@ export const Route = createFileRoute("/s/$score")({
     const rank = getRank(score, TOTAL_QUESTIONS);
     const title = `${score}/${TOTAL_QUESTIONS} — ${rank.title} · Maze of Gains Quiz`;
     const description = `I scored ${score}/${TOTAL_QUESTIONS} on the Maze of Gains quiz and ranked ${rank.title}. Take the 15-question run and see how deep you get.`;
+    const imageAlt = `Maze of Gains quiz score card: ${score} out of ${TOTAL_QUESTIONS}, rank ${rank.title}`;
     return {
       meta: [
         { title },
@@ -16,12 +17,19 @@ export const Route = createFileRoute("/s/$score")({
         { property: "og:title", content: title },
         { property: "og:description", content: description },
         { property: "og:type", content: "website" },
+        { property: "og:url", content: sharePageUrl(score) },
         { property: "og:image", content: cardUrl(score) },
+        { property: "og:image:type", content: "image/png" },
+        { property: "og:image:width", content: "1200" },
+        { property: "og:image:height", content: "630" },
+        { property: "og:image:alt", content: imageAlt },
         { name: "twitter:card", content: "summary_large_image" },
         { name: "twitter:title", content: title },
         { name: "twitter:description", content: description },
         { name: "twitter:image", content: cardUrl(score) },
+        { name: "twitter:image:alt", content: imageAlt },
       ],
+      links: [{ rel: "canonical", href: sharePageUrl(score) }],
     };
   },
   component: SharePage,
