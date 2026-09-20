@@ -1,7 +1,7 @@
 import { useMemo, useState } from "react";
 import { createFileRoute } from "@tanstack/react-router";
 import { QUESTION_POOL, getRank, type QuizQuestion } from "@/lib/quiz-data";
-import { cardPath, tweetUrl, X_HANDLE } from "@/lib/share";
+import { cardPath, tweetUrl } from "@/lib/share";
 import logoAsset from "@/assets/maze-of-gains-logo.png.asset.json";
 import bannerAsset from "@/assets/featured-game-banner.gif.asset.json";
 
@@ -254,10 +254,7 @@ function Index() {
               >
                 Post on X 𝕏
               </a>
-              <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-muted-foreground">
-                Card + {X_HANDLE} tagged in the post
-              </span>
-              <div className="mt-2 flex flex-wrap items-center justify-center gap-3">
+              <div className="mt-1 flex flex-wrap items-center justify-center gap-3">
                 <a
                   href={cardPath(score)}
                   download={`maze-of-gains-${score}-of-${TOTAL_QUESTIONS}.png`}
