@@ -59,11 +59,11 @@
   --radius: 1.25rem;
   --dungeon: oklch(0.189 0.067 293.5);
   --cream: oklch(0.974 0.026 90.1);
-  --volt: oklch(0.928 0.23 124);
+  --volt: oklch(0.712 0.225 346.1);
   --magenta: oklch(0.673 0.233 1.9);
   --cyan: oklch(0.85 0.14 209.4);
   --gold: oklch(0.85 0.174 86.6);
-  --correct: oklch(0.8 0.182 151.7);
+  --correct: oklch(0.712 0.225 346.1);
   --wrong: oklch(0.691 0.199 23.9);
   --background: var(--dungeon);
   --foreground: var(--cream);
@@ -146,12 +146,12 @@
   100% {
     box-shadow:
       0 6px 0 0 oklch(0 0 0),
-      0 0 0 0 oklch(0.928 0.23 124 / 0.4);
+      0 0 0 0 oklch(0.712 0.225 346.1 / 0.4);
   }
   50% {
     box-shadow:
       0 6px 0 0 oklch(0 0 0),
-      0 0 0 16px oklch(0.928 0.23 124 / 0);
+      0 0 0 16px oklch(0.712 0.225 346.1 / 0);
   }
 }
 @keyframes blink {
