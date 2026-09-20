@@ -89,7 +89,19 @@ function Index() {
   const isLast = current + 1 >= TOTAL_QUESTIONS;
 
   return (
-    <div className="flex min-h-screen w-full flex-col bg-background font-body text-foreground antialiased selection:bg-volt selection:text-dungeon">
+    <div
+      className="flex min-h-screen w-full flex-col bg-background font-body text-foreground antialiased selection:bg-volt selection:text-dungeon"
+      style={
+        phase === "start"
+          ? {
+              backgroundImage: `url(${bannerUrl})`,
+              backgroundSize: "cover",
+              backgroundPosition: "center",
+              backgroundRepeat: "no-repeat",
+            }
+          : undefined
+      }
+    >
       <header className="flex items-center justify-between border-b-2 border-black px-5 py-5 sm:px-10">
         <img
           src={logoUrl}
