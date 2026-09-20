@@ -254,10 +254,7 @@ function Index() {
               >
                 Post on X 𝕏
               </a>
-              <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-muted-foreground">
-                Card + {X_HANDLE} tagged in the post
-              </span>
-              <div className="mt-2 flex flex-wrap items-center justify-center gap-3">
+              <div className="mt-1 flex flex-wrap items-center justify-center gap-3">
                 <a
                   href={cardPath(score)}
                   download={`maze-of-gains-${score}-of-${TOTAL_QUESTIONS}.png`}
