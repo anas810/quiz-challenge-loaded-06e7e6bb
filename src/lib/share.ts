@@ -1,5 +1,5 @@
 /** Absolute, immutable project URL — needed so X can fetch the score-card image. */
-export const SITE_URL = "https://project--3c3652c0-16f4-4623-8674-da2e2fe587d0.lovable.app";
+export const SITE_URL = "https://mog-quiz.lovable.app";
 
 export const X_HANDLE = "@onchainheroes";
 
@@ -24,11 +24,10 @@ export function sharePageUrl(score: number): string {
   return `${SITE_URL}/s/${clampScore(score)}`;
 }
 
-export const QUIZ_URL = "https://mog-quiz.vercel.app/";
-
 export function tweetUrl(score: number, rankTitle: string): string {
   const text = `I scored ${clampScore(score)}/${TOTAL_QUESTIONS} on the ${X_HANDLE} Maze of Gains quiz — rank: ${rankTitle}.\n\nThink you know the maze better?`;
+  // The score page carries the card as its og:image, so X auto-attaches it.
   return `https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}&url=${encodeURIComponent(
-    QUIZ_URL,
+    sharePageUrl(score),
   )}`;
 }
