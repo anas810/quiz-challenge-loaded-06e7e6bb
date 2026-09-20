@@ -1,9 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { getRank } from "@/lib/quiz-data";
 import { cardPath, cardUrl, clampScore, TOTAL_QUESTIONS } from "@/lib/share";
-import logoAsset from "@/assets/maze-of-gains-logo.png.asset.json";
-
-const logoUrl = logoAsset.url;
+import { BrandWordmark } from "@/components/brand-wordmark";
 
 export const Route = createFileRoute("/s/$score")({
   head: ({ params }) => {
@@ -36,7 +34,7 @@ function SharePage() {
 
   return (
     <div className="flex min-h-screen w-full flex-col items-center justify-center gap-8 bg-background px-5 py-14 font-body text-foreground antialiased">
-      <img src={logoUrl} alt="Onchain Heroes — Maze of Gains" className="h-7 w-auto sm:h-8" />
+      <BrandWordmark className="text-sm sm:text-lg" />
 
       <img
         src={cardPath(score)}
