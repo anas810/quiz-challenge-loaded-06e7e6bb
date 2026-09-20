@@ -1,7 +1,7 @@
 import { useMemo, useState } from "react";
 import { createFileRoute } from "@tanstack/react-router";
 import { QUESTION_POOL, getRank, type QuizQuestion } from "@/lib/quiz-data";
-import { cardPath, tweetUrl, X_HANDLE } from "@/lib/share";
+import { cardPath, tweetUrl } from "@/lib/share";
 import logoAsset from "@/assets/maze-of-gains-logo.png.asset.json";
 import bannerAsset from "@/assets/featured-game-banner.gif.asset.json";
 
