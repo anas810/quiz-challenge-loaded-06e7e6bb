@@ -1,6 +1,9 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { getRank } from "@/lib/quiz-data";
 import { cardPath, cardUrl, clampScore, TOTAL_QUESTIONS } from "@/lib/share";
+import logoAsset from "@/assets/maze-of-gains-logo.png.asset.json";
+
+const logoUrl = logoAsset.url;
 
 export const Route = createFileRoute("/s/$score")({
   head: ({ params }) => {
