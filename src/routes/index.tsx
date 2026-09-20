@@ -3,8 +3,10 @@ import { createFileRoute } from "@tanstack/react-router";
 import { QUESTION_POOL, getRank, type QuizQuestion } from "@/lib/quiz-data";
 import { cardPath, tweetUrl, X_HANDLE } from "@/lib/share";
 import logoAsset from "@/assets/maze-of-gains-logo.png.asset.json";
+import bannerAsset from "@/assets/featured-game-banner.gif.asset.json";
 
 const logoUrl = logoAsset.url;
+const bannerUrl = bannerAsset.url;
 
 export const Route = createFileRoute("/")({
   head: () => ({
